@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 20px; /* Add padding to the container */
+            margin-top:400px;
+        }
+       
+        .product-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 8px; /* Add margin to create space between cards */
+            font-family: arial;
+            text-align: center;
+            max-width: 300px;
+            background-color: #fff; /* Add a background color */
+            padding: 20px; /* Add padding to the product card */
+        }
+        
+
+        .product-card button {
+            border: none;
+            outline: 0;
+            padding: 10px 0; /* Increase padding to make the button taller */
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        #Button1 {
+            position: absolute;
+            top: 180px;
+            left: 509px;
+            width: 106px;
+        }
+        #Button6 {
+            position: absolute;
+            top: 180px;
+            left: 420px;
+            width: 106px;
+        }
+        #Button2 {
+            position: absolute;
+            top: 180px;
+            left: 620px;
+            width: 106px;   
+        }
+        #Button3 {
+            position: absolute;
+            top: 180px;
+            left: 745px;
+            width: 106px;
+        }
+        #Button4 {
+            position: absolute;
+            top: 180px;
+            left: 873px;
+            width: 106px;
+        }
+        #Button5 {
+            position: absolute;
+            top: 180px;
+            left: 976px;
+            width: 106px;
+        }
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+   
+        .product-card button:hover {
+            opacity: 0.7;
+        }
+        
+
+        #Panel1 {
+            position: relative;
+        }
+        #Panel2 {
+            position: relative;
+        }
+        
+        #Image1 {
+            position: absolute;
+            left: 50%; 
+            transform: translateX(-50%); 
+            top: 20px;        }
+        #Image2 {
+            position: absolute;
+            top: 223px;
+            left: 0px; 
+            width: 230px;
+            height: 323px;
+        }
+       #Image3 {
+            position: absolute;
+            top: 223px;
+            right: 0px; 
+            width: 198px;
+            height: 323px;
+        }
+       #Image4 {
+            position: absolute;
+            top: 223px;
+            right: 744px; 
+            width: 534px;
+            height: 323px;
+        }
+       #Image5 {
+            position: absolute;
+            top: 223px;
+            right: 199px; 
+            width: 544px;
+            height: 323px;
+        }
+        #TextBox1 {
+            position: absolute;
+            top: 154px;
+            left: 49px;
+            width: 320px;
+            height: 30px;
+            background-color: white; 
+            padding: 5px; 
+            color: #9999A0; 
+            border-bottom: 2px solid #F2EEE4;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: medium;
+            border-right-style: none;
+            border-right-color: inherit;
+            border-right-width: medium;
+            border-top-style: none;
+            border-top-color: inherit;
+            border-top-width: medium;
+        }
+        #TextBox1:hover {
+            background-color: #F2EEE4; 
+        }
+        
+        #Label3 {
+            position: absolute;
+            top: 170px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #Label4 {
+            position: absolute;
+            top: 250px;
+            left: 10px;
+            height: 47px;
+        }
+        #RadioButtonList1 {
+            position: absolute;
+            top: 270px;
+            left: 217px;
+        }
+        #Label5 {
+            position: absolute;
+            top: 290px;
+            left: 10px;
+            height: 47px;
+        }
+        #RadioButtonList2{
+            position: absolute;
+            top: 310px;
+            left: 217px;
+        }
+
+        #Button7 {
+            position: absolute;
+            top: 175px; 
+            left: 1300px; 
+            height: 42px;
+            width: 58px;
+        } 
+        .auto-style2 {
+            height: 1044px;
+        }
+        #form1 {
+            height: 1195px;
+        }
+        .label-style {
+            font-weight: bold; /* Set font weight to bold */
+            font-style: normal; /* Set font style to normal */
+            font-family: 'Segoe Script', sans-serif; /* Set font family */
+            font-size: medium; /* Set font size */
+            color: #9999A0; /* Set text color */
+        }
+        .button-style1 {
+            position: absolute;
+            top: 155px;
+            left: 1200px;
+            height: 42px;
+            width: 90px;
+            color: #9999A0; /* Set text color */
+            text-decoration: none; /* Remove underline */
+            font-family: Papyrus, sans-serif; /* Set font family */
+            font-size: large; /* Set font size */
+            border: 2px dotted #9999A0; /* Set border */
+            font-weight: normal;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: white; /* Set background color */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 10px; /* Set border radius for round corners */
+        }
+
+
+        .button-style1:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
+        .auto-style3{}
+
+    </style>
+</head>
+<body>
+    <div class="auto-style2">
+        <div class="form1">
+            <div id="panel1" Height="310px" CssClass="auto-style3">
+                <img id="Image1" src="{% static 'pch logo.PNG'%}" style="text-align: justify; height: 142px; width: 557px;" />
+                <p id="Label3" class="label-style">PET STORE: High Quality Products for the furry-buddies 🐾</p>
+                <p id="Label4" class="label-style">Sort by Species</p>
+                <p id="Label5" class="label-style">Sort by Category</p>
+
+                <div id="RadioButtonList1">
+                    <label><input type="radio" name="pet" value="All"> All</label>
+                    <label><input type="radio" name="pet" value="Dog"> Dog</label>
+                    <label><input type="radio" name="pet" value="Cat"> Cat</label>
+                    <label><input type="radio" name="pet" value="Bird"> Bird</label>
+                    <label><input type="radio" name="pet" value="Fish"> Fish</label>
+                </div>
+                <div id="RadioButtonList2">
+                    <label><input type="radio" name="type" value="All"> All</label>
+                    <label><input type="radio" name="type" value="Toy"> Toy</label>
+                    <label><input type="radio" name="type" value="Food"> Food</label>
+                    <label><input type="radio" name="type" value="Clothes"> Clothes</label>
+                    <label><input type="radio" name="type" value="Products"> Products</label>
+                </div>
+                <a id="Button7" href="/cart" class="button-style1">🛒</a>
+            </div>
+            <div id="Panel2" class="auto-style3">
+                <div id="productContainer" class="product-container">
+                    {% for dest in dests %}
+                    <form method="POST" action="{% url 'save_cart1' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="image" value="{{ dest.image.url }}">
+                        <input type="hidden" name="name" value="{{ dest.name }}">
+                        <input type="hidden" name="price" value="{{ dest.price }}">
+                        <input type="hidden" name="message" value="{{ dest.message }}">
+                        <input type="hidden" name="pet" value="{{ dest.pet }}">
+                        <input type="hidden" name="type" value="{{ dest.type1 }}">
+                        <div class="product-card" data-pet="{{ dest.pet }}" data-type="{{ dest.type1 }}">
+                            <img src="{{ dest.image.url }}" alt="{{ dest.name }}" style="width:100%" />
+                            <h2>{{ dest.name }}</h2>
+                            <p class="price">₹{{ dest.price }}</p>
+                            <p>{{ dest.message }}</p>
+                            <p><button>Add to Cart</button></p>
+                        </div>
+                    </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const petRadios = document.querySelectorAll("input[name='pet']");
+            const typeRadios = document.querySelectorAll("input[name='type']");
+            const productCards = document.querySelectorAll(".product-card");
+
+            petRadios.forEach(function (radio) {
+                radio.addEventListener("change", filterProducts);
+            });
+
+            typeRadios.forEach(function (radio) {
+                radio.addEventListener("change", filterProducts);
+            });
+
+            function filterProducts() {
+                const selectedPet = document.querySelector("input[name='pet']:checked").value;
+                const selectedType = document.querySelector("input[name='type']:checked").value;
+
+                productCards.forEach(function (card) {
+                    const cardPet = card.getAttribute("data-pet");
+                    const cardType = card.getAttribute("data-type");
+
+                    if ((selectedPet === "All" || selectedPet === cardPet)
+                        && (selectedType === "All" || selectedType === cardType)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

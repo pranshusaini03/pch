@@ -1,0 +1,168 @@
+{%load static %}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 537px;
+        }
+            #Button1 {
+        position: absolute;
+        top: 180px;
+        left: 509px;
+        width: 106px;
+    }
+     #Button6 {
+    position: absolute;
+    top: 180px;
+    left: 420px;
+    width: 106px;
+}
+    #Button2 {
+        position: absolute;
+        top: 180px;
+        left: 620px;
+        width: 106px;
+    }
+    #Button3 {
+        position: absolute;
+        top: 180px;
+        left: 745px;
+        width: 106px;
+    }
+    #Button4 {
+        position: absolute;
+        top: 180px;
+        left: 873px;
+        width: 106px;
+    }
+    #Button5 {
+        position: absolute;
+        top: 180px;
+        left: 976px;
+        width: 106px;
+    }
+        #Panel1 {
+            top: 0px;
+        }
+        #Panel2 {
+            top: 50px;
+        }
+        #Image1 {
+            position: absolute;
+            left: 50%;
+            top:0px;
+            transform: translateX(-50%); 
+        }
+        #Label1 {
+            position: absolute;
+            top: 130px;
+            left: 57%;
+            transform: translateX(-50%);
+            width: 504px;
+        }
+        #Label2 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .image-button {
+            background-color: #64797A
+        }
+           
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Distribute items evenly */
+            padding: 0 20px; /* Add padding to the container */
+        }
+
+        /* Update product card styles */
+        .product-card {
+            width: 23%; /* Adjust width and margin */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #fff; /* Add a background color */
+            padding: 20px; /* Add padding to the product card */
+            margin-top: 120px;
+        }
+        .product-card button {
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .product-image {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-details {
+            flex: 2;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .product-card h2,
+        .product-card h3,
+        .product-card p {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .product-card button:hover {
+            background-color: #333;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+        
+        #ImageButton1 {
+            top: 20px;
+            left: 0px;
+        }
+        /* Other Styles */
+        /* Add other styles as needed */
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="Panel1">
+            <label id="Label2" style="font-weight: bold;top:20px; font-style: normal; font-family: 'Segoe Script'; font-size: xx-large; color: #EA5455;">Adoption Centres in</label>
+        </div>
+        <div id="Panel2">
+            <div id="productContainer" runat="server" class="product-container">
+                {% for doc in docs %}
+                <div class="product-card">
+                    <img src="{{ doc.image.url }}" alt="Pedigree" style="width:100%" />
+                    <h2>{{ doc.name }}</h2>
+                    <p class="detail">{{ doc.shortaddress }}</p>
+                    <p class="address">{{ doc.address }}</p>
+                    <p class="phone_no">{{ doc.phone_no }}</p>
+                    <p>{{ doc.opening_Hours }}</p>
+                    <p><a href="/form">book an appointment</a></p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+</body>
+</html>

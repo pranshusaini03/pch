@@ -1,0 +1,112 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{% static 'harmony-fade-ombre-wallpaper-design-plain.jpg'%}");
+            background-size: cover;
+        }
+        #Image1 {
+            position: absolute;
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+        #Image2 {
+            position: relative;
+            top: 194px;
+            left: 43%; 
+        }
+    
+        #Label1 {
+            position: absolute;
+            top: 150px;
+            left: 53%;
+            transform: translateX(-50%);
+            width: 197px;
+            height: 60px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Adjusted to make items stack vertically */
+            height: 62vh;
+        }
+
+        #details {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            width: 270px; /* Added width for better alignment */
+        }
+
+        .input-label {
+            font-family: 'Century Gothic', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-textbox {
+            width: 250px;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        #Button1 {
+            width: 260px;
+            height: 41px;
+            background-color: #BEB8DA;
+            font-weight: bold;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+        #Button2 {
+            font-weight: bold;
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+
+        #error {
+            color: red;
+            margin-top: 25px;
+        }
+        auto-style1 {
+            height: 500px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" method="POST" action="/signin/" class="mb-2">
+        {% csrf_token %}
+        <div id="Panel1" runat="server" CssClass="auto-style1" Height="500px">
+            <img id="Image1" runat="server" src="{% static 'pch_logo-removebg-preview.png'%}" style="text-align: justify; height: 142px; width: 557px;" />
+            <img id="Image2" runat="server" Height="90px" src="{% static '—Pngtree—dogs and cats  dogs_119553.png'%}" ClientIDMode="Static" />
+
+            <div id="container">
+                <div id="details">
+                    <label id="Label2" runat="server" CssClass="input-label" ForeColor="Black" for="username">Username</label>
+                    <input id="TextBox1" runat="server" CssClass="input-textbox"  name="username" placeholder="Enter Your Username" Required>
+
+                    <label id="Label3" runat="server" CssClass="input-label" ForeColor="Black" for="pass1">Username</label>
+                    <input id="TextBox2" runat="server" CssClass="input-textbox"  name="pass1" placeholder="Enter Your Password Required">
+                    <button id="Button1" type="submit" class="btn btn-primary">Log In</button>
+                </div>
+                <a href='/signup'>Register now 🐾</a>
+            </div>
+
+        <div>
+
+    </form>
+</body>
+</html>

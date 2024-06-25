@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 537px;
+        }
+        #Panel1 {
+            top: 0px;
+        }
+        #Panel2 {
+            top: 50px;
+        }
+        #Image1 {
+            position: absolute;
+            left: 60%; 
+            transform: translateX(-50%); 
+        }
+        #Label1 {
+            position: absolute;
+            top: 81px;
+            left: 77%;
+            transform: translateX(-50%);
+            width: 383px;
+        }
+        #Label2 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .image-button {
+            background-color: #64797A
+        }
+               .product-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+               width: 23%; /* Adjust the width as needed */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px; 
+    margin-right:10px;
+    overflow: hidden;
+     
+    margin-bottom: 20px;
+}   
+        .product-card button {
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .product-image {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-details {
+            flex: 2;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .product-card h2,
+        .product-card h3,
+        .product-card p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .product-card button:hover {
+            background-color: #333;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+        
+        #ImageButton1 {
+            top: 20px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body style="background-image: url({% static 'doggroom.jpg' %}); background-repeat: no-repeat; background-position: center center; background-size: auto; height: 100vh; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;">
+    <form id="form1" runat="server">
+        <div class="auto-style1">
+            <img id="Image1" src="{% static 'pch_logo-removebg-preview.png' %}" style="text-align: justify; height: 107px; width: 408px; top: 1px; background-color: transparent;" />
+
+            <div id="Panel1" class="panel">
+                <label id="Label1" style="font-weight: bold; font-style: normal; font-family: 'Segoe Script'; font-size: xx-large; color: #EA5455;">Grooming Zone</label>
+                <label id="Label2" style="font-weight: bold; font-style: normal; font-family: 'Segoe Script'; font-size: xx-large; color: #EA5455; display: none;">Pet Groomers</label>
+            </div>
+            
+            <div id="Panel2" class="panel product-container">
+                <a href="/dgroomer">
+                    <img id="ImageButton1" src="{% static 'delhimap.png' %}" class="image-button" style="position: absolute; top: 50px; left: 0px;" />
+                </a>
+                <a href="/bgroomer">
+                <img id="ImageButton2" src="{% static 'bnglomap.png' %}" class="image-button" style="position: absolute; top: 300px; left: 0px;" />
+                </a>
+                <a href="/hgroomer">
+                <img id="ImageButton3" src="{% static 'hydmap.jpg' %}" class="image-button" style="position: absolute; bottom: 30px; left: 0px;" />
+                </a>
+                <a href="/lgroomer">
+                <img id="ImageButton4" src="{% static 'lkomap.png' %}" class="image-button" style="position: absolute; top: 50px; right: 0px;" />
+                </a>
+                <a href="/mgroomer">
+                <img id="ImageButton5" src="{% static 'mmbmap.png' %}" class="image-button" style="position: absolute; top: 300px; right: 0px;" />
+                </a>
+                <a href="/kgroomer">
+                <img id="ImageButton6" src="{% static 'kolmap.jpg' %}" class="image-button" style="position: absolute; bottom: 30px; right: 0px;" />
+                </a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

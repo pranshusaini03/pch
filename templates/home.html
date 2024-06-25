@@ -1,0 +1,353 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style>
+        .product-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            background-color: #fff; 
+            border-radius: 5px; 
+            padding: 20px; 
+            margin-top: 650px; 
+
+        }
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+        .product-card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px; 
+        }
+        .product-card button:hover {
+            opacity: 0.7;
+        }
+        
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+       
+    
+        #Image1 {
+            position: absolute;
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+        #Image2 {
+            position: absolute;
+            top: 223px;
+            left: 0px;
+            width: 230px;
+            height: 323px;
+        }
+       #Image3 {
+            position: absolute;
+            top: 223px;
+            right: 0px;
+            width: 198px;
+            height: 323px;
+        }
+       #Image4 {
+            position: absolute;
+            top: 223px;
+            right: 744px; 
+            width: 534px;
+            height: 323px;
+        }
+       #Image5 {
+            position: absolute;
+            top: 223px;
+            right: 199px; 
+            width: 544px;
+            height: 323px;
+        }
+        #TextBox1 {
+            position: absolute;
+            top: 154px;
+            left: 49px;
+            width: 320px;
+            height: 30px;
+            background-color: white; 
+            padding: 5px;
+            color: #9999A0;
+            border-bottom: 2px solid #F2EEE4;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: medium;
+            border-right-style: none;
+            border-right-color: inherit;
+            border-right-width: medium;
+            border-top-style: none;
+            border-top-color: inherit;
+            border-top-width: medium;
+        }
+        #TextBox1:hover {
+            background-color: #F2EEE4;
+        }
+        #Button1 {
+            position: absolute;
+            top: 170px;
+            left: 509px;
+            width: 106px;
+        }
+        #Button2 {
+            position: absolute;
+            top: 170px;
+            left: 620px;
+            width: 106px;
+        }
+        #Button3 {
+            position: absolute;
+            top: 170px;
+            left: 745px;
+            width: 106px;
+        }
+        #Button4 {
+            position: absolute;
+            top: 169px;
+            left: 873px;
+            width: 106px;
+        }
+        #Button5 {
+            position: absolute;
+            top: 169px;
+            left: 976px;
+            width: 106px;
+        }
+        #Button6 {
+            position: absolute;
+            top: 155px;
+            left: 1200px;
+            height: 42px;
+            width: 97px;
+        }
+        #Button7 {
+            position: absolute;
+            top: 155px; 
+            left: 1300px; 
+            height: 42px;
+            width: 58px;
+        } 
+        #Button1:hover {
+            color: #EA5455;
+        }
+        #Button2:hover {
+            color: #EA5455; 
+        }
+        #Button3:hover {
+            color: #EA5455;
+        }
+        #Button4:hover {
+            color: #EA5455; 
+        }
+        #Button5:hover {
+            color: #EA5455; 
+        }
+        
+        
+        #Label1 {
+            position: absolute;
+            top: 601px;
+            left: 58%; 
+            transform: translateX(-50%);
+            width: 1188px;
+        }
+        #Label2 {
+            position: absolute;
+            top: 1210px;
+            left: 50%; 
+            transform: translateX(-50%);
+        }
+        #Label3 {
+            position: absolute;
+            top: 1180px;
+            left: 50%; 
+            transform: translateX(-50%);
+        }
+       
+        .auto-style1 {}
+        .auto-style2 {
+            height: 1044px;
+        }
+        #form1 {
+            height: 1195px;
+        }
+        .auto-style3 {}
+        .button-style {
+            color: black; /* Set text color to black */
+            text-decoration: none; /* Remove underline */
+            font-family: Georgia; /* Set font family */
+            font-size: medium; /* Set font size */
+        }
+        .button-style1 {
+            position: absolute;
+            top: 155px;
+            left: 1200px;
+            height: 42px;
+            width: 90px;
+            color: #9999A0; /* Set text color */
+            text-decoration: none; /* Remove underline */
+            font-family: Papyrus, sans-serif; /* Set font family */
+            font-size: large; /* Set font size */
+            border: 2px dotted #9999A0; /* Set border */
+            font-weight: normal;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: white; /* Set background color */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 10px; /* Set border radius for round corners */
+        }
+
+
+        .button-style1:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
+
+        .label-style {
+            font-weight: bold; /* Set font weight to bold */
+            font-style: normal; /* Set font style to normal */
+            font-family: 'Segoe Script', sans-serif; /* Set font family */
+            font-size: x-large; /* Set font size */
+            color: #9999A0; /* Set text color */
+        }
+        .label-style1 {
+            font-weight: bold; /* Set font weight to bold */
+            font-style: normal; /* Set font style to normal */
+            font-family: 'Segoe Script', sans-serif; /* Set font family */
+            font-size: x-large; /* Set font size */
+            color: #9999A0; /* Set text color */
+        }
+        .input-style {
+            font-weight: bold; /* Set font weight to bold */
+            font-style: italic; /* Set font style to italic */
+            font-family: 'Book Antiqua', serif; /* Set font family */
+            font-size: medium; /* Set font size */
+            color: #9999A0; /* Set text color */
+        }
+
+
+
+    </style>
+    <title></title>
+</head>
+<body class="auto-style2">
+    <div id="form1" runat="server">
+        <div id="Panel1" Height="1474px" CssClass="auto-style3" >
+            <img id="Image1" src="{% static 'pch logo.PNG'%}" alt="Pet Store Logo" style="text-align: justify; height: 142px; width: 557px;"/>
+            <input id="TextBox1" type="text" class="input-style" value="🔍Search" />
+
+            <a id="Button1" href="/ps" class="button-style">Pet Store</a>
+            <a id="Button2" href="/grooming" class="button-style">Grooming</a>
+            <a id="Button3" href="/health" class="button-style">Health Care</a>
+            <a id="Button4" href="/adoption" class="button-style">Adopt Zone</a>
+            <a id="Button5" href="/" class="button-style">FAQs</a>
+             {% if user.is_authenticated %}
+            <a id="Button6" href="/signout" class="button-style1">signout</a>
+            {% else %}
+            <a id="Button6" href="/signin" class="button-style1">LOGIN</a>
+
+            {% endif %}
+            <a id="Button7" href="/cart" class="button-style1">🛒</a>
+            <img id="Image2" src="{% static 'istockphoto-1417882544-170667a.jpg'%}" CssClass="auto-style1" />
+            <img id="Image3" src="{% static 'istockphoto-141788254w4-170667a.jpg'%}" />
+            <img id="Image4" src="{% static 'pets-3715733_640.jpg'%}" />
+            <img id="Image5" src="https://img.freepik.com/free-photo/cute-animals-group-white-background_23-2150038562.jpg" />
+            <p id="Label1" class="label-style">----------------------- Featured Products -----------------------</p>
+                           
+        </div>
+       <div class="product-container">
+       <form method="POST" action="{% url 'save_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="image" value="{% static 'pedigree.jpeg'%}">
+            <input type="hidden" name="name" value="Pedigree Dog Food">
+            <input type="hidden" name="price" value="610">
+            <input type="hidden" name="message" value="Adult Dog Food, 3kg Pack">
+            <div class="product-card">
+            <img src="{% static 'pedigree.jpeg'%}" alt="Pedigree" style="width:100%"/>
+            <h2>Pedigree Dog Food</h2>
+            <p class="price">₹610</p>
+            <p>Adult Dog Food, 3kg Pack</p>
+            <p><button >Add to Cart</button></p>
+            </div>
+            </form>
+            <form method="POST" action="{% url 'save_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="image" value="{% static 'bed.jpg'%}">
+            <input type="hidden" name="name" value="Deluxe Bed">
+            <input type="hidden" name="price" value="1350">
+            <input type="hidden" name="message" value="Extra Soft & Machine Washable">
+            <div class="product-card">         
+            <img src="{% static 'bed.jpg'%}" alt="Bed" style="width:100%"/>
+            <h2>Deluxe Bed</h2>
+            <p class="price">₹1350</p>
+            <p>Extra Soft & Machine Washable</p>
+            <p><button>Add to Cart</button></p>
+            </div>
+            </form>
+            <form method="POST" action="{% url 'save_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="image" value="{% static 'cat toy.jpg'%}">
+            <input type="hidden" name="name" value="Spring Mouse Toy">
+            <input type="hidden" name="price" value="450">
+            <input type="hidden" name="message" value="Interactive Spring Mouse">
+            <div class="product-card">            
+            <img src="{% static 'cat toy.jpg'%}" alt="Cat Toy" style="width:100%"/>
+            <h2>Spring Mouse Toy</h2>
+            <p class="price">₹450</p>
+            <p>Interactive Spring Mouse</p>
+            <p><button>Add to Cart</button></p>
+            </div>
+            </form>
+            <form method="POST" action="{% url 'save_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="image" value="{% static 'birdfeed.jpg'%}">
+            <input type="hidden" name="name" value="Bird Feeder">
+            <input type="hidden" name="price" value="500">
+            <input type="hidden" name="message" value="Seeds and Water Feeder">
+            <div class="product-card">
+                        
+            <img src="{% static 'birdfeed.jpg'%}" alt="Bird Feeder" style="width:100%"/>
+            <h2>Bird Feeder</h2>
+            <p class="price">₹500</p>
+            <p>Seeds and Water Feeder</p>
+            <p><button>Add to Cart</button></p>
+            </div>
+            </form>
+            <form method="POST" action="{% url 'save_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="image" value="{% static 'sweater.jpg'%}">
+            <input type="hidden" name="name" value="Green Sweater">
+            <input type="hidden" name="price" value="900">
+            <input type="hidden" name="message" value="Warm and Itch-Free">
+            <div class="product-card">
+            <img src="{% static 'sweater.jpg'%}" alt="cat sweater" style="width:100%"/>
+            <h2>Green Sweater</h2>
+            <p class="price">₹900</p>
+            <p>Warm and Itch-Free</p>
+            <p><button>Add to Cart</button></p>
+            </div>
+            </form>
+            </div>
+    <p id="Label3" class="label-style1">petcarehub🐾</p>
+    <p id="Label2" class="label-style1">contact us at petcarehub@gmail.com</p>
+            
+        </div>
+</body>
+</html>
